@@ -1,0 +1,6 @@
+# ESymIA Docs
+
+[toc]
+
+## Purpose
+
