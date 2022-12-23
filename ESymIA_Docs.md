@@ -1,7 +1,7 @@
 # ESymIA Docs <!-- omit in toc -->
 
 - [Scopo](#scopo)
-- [Struttura dell'architettura](#struttura-dellarchitettura)
+- [Panoramica dell'architettura](#panoramica-dellarchitettura)
 - [Funzionalità](#funzionalità)
   - [Progetti di simulazione](#progetti-di-simulazione)
     - [Modeler](#modeler)
@@ -18,7 +18,7 @@
 ## Scopo
 ESymIA è un'applicazione per la simulazione delle caratteristiche elettriche/elettroniche di modelli 3D.
 
-## Struttura dell'architettura
+## Panoramica dell'architettura
 ## Funzionalità
 ### Progetti di simulazione
 #### Modeler

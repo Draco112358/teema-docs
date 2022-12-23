@@ -1,6 +1,6 @@
 # CADmIA Docs <!-- omit in toc -->
 - [Scopo](#scopo)
-- [Struttura dell'architettura](#struttura-dellarchitettura)
+- [Panoramica dell'architettura](#panoramica-dellarchitettura)
 - [Funzionalità](#funzionalità)
   - [Modelli base](#modelli-base)
   - [Movimenti](#movimenti)
@@ -19,7 +19,7 @@ CADmIA è un'applicazione per la creazione di modelli 3D.
 Nata inizialmente per la modellazione in ambito elettrico/elettronico, ha acquisito poi una sua indipendenza, slegandosi da specifici domini applicativi.
 Tramite una serie di componenti base (in futuro estendibili) componibili, si può arrivare a creare modelli anche di elevata complessità. 
 
-## Struttura dell'architettura
+## Panoramica dell'architettura
 
 ## Funzionalità
 ### Modelli base
