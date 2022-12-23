@@ -1,7 +1,32 @@
-- [ESymIA Docs](#esymia-docs)
-  - [Purpose](#purpose)
+# ESymIA Docs <!-- omit in toc -->
 
-# ESymIA Docs
+- [Scopo](#scopo)
+- [Struttura dell'architettura](#struttura-dellarchitettura)
+- [Funzionalità](#funzionalità)
+  - [Progetti di simulazione](#progetti-di-simulazione)
+    - [Modeler](#modeler)
+    - [Physics](#physics)
+      - [Porte](#porte)
+      - [Segnali](#segnali)
+    - [Simulator](#simulator)
+      - [Meshing](#meshing)
+    - [Results](#results)
+  - [Storage utente](#storage-utente)
+    - [Condivisione progetti e cartelle](#condivisione-progetti-e-cartelle)
 
-## Purpose
 
+## Scopo
+ESymIA è un'applicazione per la simulazione delle caratteristiche elettriche/elettroniche di modelli 3D.
+
+## Struttura dell'architettura
+## Funzionalità
+### Progetti di simulazione
+#### Modeler
+#### Physics
+##### Porte
+##### Segnali
+#### Simulator
+##### Meshing
+#### Results
+### Storage utente
+#### Condivisione progetti e cartelle
