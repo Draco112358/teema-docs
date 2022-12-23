@@ -1,6 +1,7 @@
-# CADmIA Docs
+- [CADmIA Docs](#cadmia-docs)
+  - [Purpose](#purpose)
 
-[toc]
+# CADmIA Docs
 
 ## Purpose
 

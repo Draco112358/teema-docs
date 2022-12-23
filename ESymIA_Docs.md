@@ -1,6 +1,7 @@
-# ESymIA Docs
+- [ESymIA Docs](#esymia-docs)
+  - [Purpose](#purpose)
 
-[toc]
+# ESymIA Docs
 
 ## Purpose
 
