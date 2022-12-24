@@ -6,9 +6,6 @@
   - [Movimenti](#movimenti)
     - [Spostamenti di precisione tramite SideBar](#spostamenti-di-precisione-tramite-sidebar)
   - [Composizione con operazioni binarie](#composizione-con-operazioni-binarie)
-    - [Unione](#unione)
-    - [Intersezione](#intersezione)
-    - [Differenza](#differenza)
   - [Clone](#clone)
   - [Materiali](#materiali)
   - [Import](#import)
@@ -23,12 +20,15 @@ Tramite una serie di componenti base (in futuro estendibili) componibili, si pu√
 
 ## Funzionalit√†
 ### Modelli base
+![modelli_base](imgs/base_components.png)
 ### Movimenti
+![traslazione](imgs/translation.png)
+![rotazione](imgs/rotation.png)
+![scale](imgs/scaling.png) 
 #### Spostamenti di precisione tramite SideBar
+![spostamenti_accurati](imgs/accurate_movements.png)
 ### Composizione con operazioni binarie
-#### Unione
-#### Intersezione
-#### Differenza
+![bynary_ops](imgs/bynary_ops.png)
 ### Clone
 ### Materiali
 ### Import
