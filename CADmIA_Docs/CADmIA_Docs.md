@@ -22,9 +22,7 @@ Tramite una serie di componenti base (in futuro estendibili) componibili, si pu√
 ### Modelli base
 ![modelli_base](imgs/base_components.png)
 ### Movimenti
-![traslazione](imgs/translation.png)
-![rotazione](imgs/rotation.png)
-![scale](imgs/scaling.png) 
+![movimenti](imgs/movements.png)
 #### Spostamenti di precisione tramite SideBar
 ![spostamenti_accurati](imgs/accurate_movements.png)
 ### Composizione con operazioni binarie
