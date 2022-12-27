@@ -80,7 +80,7 @@ Comunque, seppur identico all'originale, il nuovo oggetto creato è completament
 Oltre le caratteristiche geometriche, è possibile assegnare agli oggetti anche dei materiali.<br>
 Nella figura seguente vediamo la selezione del materiale tramite la SideBar. Per poter utilizzare i materiali bisogna essere loggati.<br>
 ![selezione_materiale](imgs/materials.png)
-L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, che assumerà il colore definito dal materiale, comporta per l'oggetto anche l'assunzione di tutte le proprietà fisiche del materiale stesso. Nella figura sottostante si possono vedere alcune proprietà specifiche che i materiali portano con sé.
+L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, che assumerà il colore definito dal materiale, comporta per l'oggetto anche l'assunzione di tutte le proprietà fisiche del materiale stesso. Nella figura sottostante si possono vedere alcune proprietà specifiche che i materiali portano con sé. <br>
 ![materiale_dettagli](imgs/material_details.png) <br>
 Al momento le proprietà fisiche di interesse sono quelle di natura elettrica/elettronica, ma in futuro potranno esserne aggiunte altre, ad esempio proprietà meccaniche.
 
