@@ -8,18 +8,21 @@
   - [**Trasformazioni**](#trasformazioni)
   - [**Clonazione di oggetti**](#clonazione-di-oggetti)
   - [**Materiali**](#materiali)
-  - [**Import**](#import)
-  - [**Export**](#export)
+  - [**Import/Export**](#importexport)
 
 ## **Scopo**
 
 CADmIA è un'applicazione per la creazione di modelli 3D.
 Nata inizialmente per la modellazione in ambito elettrico/elettronico, ha acquisito poi una sua indipendenza, slegandosi da specifici domini applicativi.
-Tramite una serie di componenti base (in futuro estendibili) componibili, si può arrivare a creare modelli anche di elevata complessità.
+Tramite una serie di componenti base (in futuro estendibili) componibili, si può arrivare a creare modelli di elevata complessità.
 
 ## **Panoramica dell'architettura**
 
 ## **Funzionalità**
+
+La parte principale dell'interfaccia è rappresentata dal Canvas, lo spazio nel quale verranno creati i modelli. Una delle sue principali funzionalità è la possibilità di ruotare la scena, cambiando l'angolo di visuale. Per far questo basta cliccare in un punto vuoto della scena e, tenendo premuto, muoversi ruotando la visuale.<br>
+Un'altra funzione molto utile è quella di zoom, attivabile tramite le analoghe procedure di touchpad e mouse.<br>
+Una cosa da tenere presente è che il punto di vista è centrato di default sull'origine degli assi di riferimento, per cui sia la rotazione della scena che lo zoom saranno realizzati rispetto a quel punto specifico. In alcuni casi però vorremo poter vedere nel dettaglio uno specifico oggetto: in questo caso prima di effettuare zoom o rotazioni di scena, possiamo prima centrare il punto di vista sull'oggetto specifico, con un doppio click su di esso.
 
 ### **Modelli base**
 
@@ -84,6 +87,16 @@ L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, ch
 ![materiale_dettagli](imgs/material_details.png) <br>
 Al momento le proprietà fisiche di interesse sono quelle di natura elettrica/elettronica, ma in futuro potranno esserne aggiunte altre, ad esempio proprietà meccaniche.
 
-### **Import**
+### **Import/Export**
 
-### **Export**
+Per quanto riguarda le funzionalità di import/export, abbiamo tre opzioni disponibili al momento. Nella figura possiamo vedere il menu relativo.
+![import_export](imgs/import_export_menu.png)
+In particolare abbiamo:
+- Export
+  - *Save to DB*. Salva il modello sul server e richiede il login.<br> Selezionando l'apposita voce di menù ci verrà chiesto di inserire un nome per il modello da salvare. Nel modello saranno compresi tutti gli oggetti presenti nella scena.
+  - *Export Project*. Tramite essa andremo ad esportare in locale, in formato JSON, tutti gli oggetti presenti nella scena.
+  - *Export STL Format*. In questo caso esportiamo in locale gli oggetti presenti nella scena, ma in formato STL, uno standard molto diffuso.<br> Una differenza importante rispetto all'export in JSON è che, in questo caso, per vincoli di formato, tutti gli oggetti della scena verranno esportati come fossero un tutt'uno. Se ad esempio nella scena avessimo due oggetti distinti, essi verrebbero esportati come un'unica geometria, per cui un futuro import non ci permetterebbe di riavere gli oggetti distinti, ma solo la loro unione.<br> Perderemo, inoltre, le informazioni sui materiali assegnati ai vari oggetti.
+- Import
+  - *Load From DB*. Consente di riprendere un modello salvato sul server e richiede il login.<br> Tramite questa voce di menu ci si aprirà una finestra con una lista dei modelli precedentemente salvati sul database, per poterne selezionare uno da caricare nella scena.
+  - *Import Project*. Questa opzione consente di caricare nella scena un modello salvato precedentemente in formato JSON.
+  - *Import STL File*. In questo caso andiamo a caricare il modello da un file STL locale.
