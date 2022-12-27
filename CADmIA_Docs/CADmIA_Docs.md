@@ -18,6 +18,8 @@ Tramite una serie di componenti base (in futuro estendibili) componibili, si pu�
 
 ## **Panoramica dell'architettura**
 
+![cadmia_architettura](imgs/cadmia_arch.png)
+
 ## **Funzionalità**
 
 La parte principale dell'interfaccia è rappresentata dal Canvas, lo spazio nel quale verranno creati i modelli. Una delle sue principali funzionalità è la possibilità di ruotare la scena, cambiando l'angolo di visuale. Per far questo basta cliccare in un punto vuoto della scena e, tenendo premuto, muoversi ruotando la visuale.<br>
