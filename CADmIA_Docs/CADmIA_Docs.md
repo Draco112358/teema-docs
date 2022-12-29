@@ -108,6 +108,6 @@ In particolare abbiamo:
   - *Export Project*. Tramite essa andremo ad esportare in locale, in formato JSON, tutti gli oggetti presenti nella scena.
   - *Export STL Format*. In questo caso esportiamo in locale gli oggetti presenti nella scena, ma in formato STL, uno standard molto diffuso.<br> Una differenza importante rispetto all'export in JSON è che, in questo caso, per vincoli di formato, tutti gli oggetti della scena verranno esportati come fossero un tutt'uno. Se ad esempio nella scena avessimo due oggetti distinti, essi verrebbero esportati come un'unica geometria, per cui un futuro import non ci permetterebbe di riavere gli oggetti distinti, ma solo la loro unione.<br> Perderemo, inoltre, le informazioni sui materiali assegnati ai vari oggetti.
 - Import
-  - *Load From DB*. Consente di riprendere un modello salvato sul server e richiede il login.<br> Tramite questa voce di menu ci si aprirà una finestra con una lista dei modelli precedentemente salvati sul database, per poterne selezionare uno da caricare nella scena.
+  - *Load From DB*. Consente di riprendere un modello salvato sul server e richiede il login.<br> Tramite questa voce di menu ci si aprirà una finestra con una lista dei modelli precedentemente salvati da noi sul database, per poterne selezionare uno da caricare nella scena.
   - *Import Project*. Questa opzione consente di caricare nella scena un modello salvato precedentemente in formato JSON.
   - *Import STL File*. In questo caso andiamo a caricare il modello da un file STL locale.
