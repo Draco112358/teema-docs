@@ -17,8 +17,16 @@ Nata inizialmente per la modellazione in ambito elettrico/elettronico, ha acquis
 Tramite una serie di componenti base (in futuro estendibili) componibili, si può arrivare a creare modelli di elevata complessità.
 
 ## **Panoramica dell'architettura**
+Vediamo innanzitutto uno schema di massima dell'architettura di CADmIA, con esempi di relazioni tra i vari strati per alcune funzionalità specifiche.<br>
+![cadmia_architettura](imgs/cadmia_arch.png)<br>
+L'applicazione è basata su due tecnologie prinicipali lato client:
+- *ReactJS*, per lo sviluppo dell'interfaccia;
+- *ThreeJS*, per la rappresentazione dei modelli 3D.
 
-![cadmia_architettura](imgs/cadmia_arch.png)
+Per quanto riguarda la parte server, invece, ne sfrutta essenzialmente tre:
+- *Auth0*, per le procedure di autenticazione e gestione degli utenti;
+- *Fauna*, per la gestione dei dati dell'app, con le relative politiche di accesso ad essi da parte degli utenti;
+- *AWS*, utilizzato come storage per i modelli salvati, che possono arrivare a dimensioni considerevoli, non gestibili direttamente tramite Fauna.<br>
 
 ## **Funzionalità**
 
