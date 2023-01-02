@@ -17,6 +17,7 @@ Nata inizialmente per la modellazione in ambito elettrico/elettronico, ha acquis
 Tramite una serie di componenti base (in futuro estendibili) componibili, si può arrivare a creare modelli di elevata complessità.
 
 ## **Panoramica dell'architettura**
+
 Vediamo innanzitutto uno schema di massima dell'architettura di CADmIA, con esempi di relazioni tra i vari strati per alcune funzionalità specifiche.<br>
 ![cadmia_architettura](imgs/cadmia_arch.png)<br>
 L'applicazione è basata su due tecnologie prinicipali lato client:
