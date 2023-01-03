@@ -57,11 +57,12 @@ Per una lista completa delle simulazioni effettuate, si può invece far riferime
 #### **Modeler**
 
 Una volta aperto un progetto, ci ritroveremo automaticamente nella sezione *Modeler*, dalla quale potremo importare, tramite due pulsanti appositi, un modello dal database o da file locale.
-![modeler](imgs/Import_modello.png)
+
+![modeler_import](imgs/Import_modello.png)
 
 Il risultato è visibile nella figura seguente.
 
-![modeler](imgs/modeler.png)
+![modeler_result](imgs/modeler.png)
 
 In questa sezione possiamo vedere dettagli del modello, ovvero i vari elementi che costiruiscono la sua struttura interna, con informazioni sui relativi materiali.<br>
 Le informazioni sono a puro scopo documentativo, da ESymIA non è possibile modificare i modelli importati.<br>
@@ -109,7 +110,13 @@ Al termine dell'operazione di meshing le dimensioni impostate per il parallelepi
 
 #### **Results**
 
+Una volta avviata, la simulazione lavorerà in background, per cui nell'attesa potremo anche fare altro.<br>
+Una volta terminata, potremo andare nella sezione *Results* del progetto relativo, per analizzarne i risultati, sottoforma di grafici sulle varie proprietà oggetto di interesse.<br>
+Nell'immagine possiamo vedere una schermata d'esempio di possibili risultati.
+
 ![results](imgs/results.png)
+
+Tramite i pulsanti posti nella fascia al di sopra dei grafici è possibile regolare alcune impostazioni di visualizzazione, come la visita su una colonna (grafici più grandi) o su due (più compatta), oltre alla scala delle ascisse dei grafici (lineare o logaritmica).
 
 ### **Storage utente**
 
