@@ -48,7 +48,7 @@ Per far questo, a partire dalla dashboard (vedi la figura sottostante), abbiamo 
 - creare un nuovo progetto tramite la voce *New Project*: ci verrà chiesto di inserire un nome per esso, oltre ad una descrizione opzionale;
 - proseguire con un progetto salvato in locale, importandolo tramite *Import Project*;
 - proseguire con un progetto esistente tra quelli salvati sul database, che possiamo vedere in parte listati nella sezione *My Recent Projects*, oppure in forma completa nella scheda *Projects* del menu principale della dashboard.
-- 
+
 ![dashboard](imgs/dashboard.png)
 
 Sempre nella dashboard, inoltre, si ha a disposizione una lista delle ultime simulazioni effettuate, dalla quale è possibile andare a visualizzarne direttamente i risultati.
@@ -119,7 +119,19 @@ Nell'immagine possiamo vedere una schermata d'esempio di possibili risultati.
 Tramite i pulsanti posti nella fascia al di sopra dei grafici è possibile regolare alcune impostazioni di visualizzazione, come la visita su una colonna (grafici più grandi) o su due (più compatta), oltre alla scala delle ascisse dei grafici (lineare o logaritmica).
 
 ### **Storage utente**
+Per il mantenimento, il recupero e l'organizzazione dei progetti creati dall'utente, viene messo a disposizione un sistema di cloud storage, mediante il quale è possibile:
+- organizzare i progetti in cartelle;
+- creare, cancellare, modificare e spostare progetti e cartelle;
+- condividere progetti e cartelle con gli altri utenti.
+
+Tali funzionalita vengono rese disponibili all’utente attraverso un menù attivabile grazie al click del tasto destro del mouse sul progetto o la cartella a cui si intendono applicare. Per la funzione di spostameto di progetti e cartelle è prevista un’ulteriore modalita di Drag and Drop.
 
 ![drive](imgs/drive.png)
 
 #### **Condivisione progetti e cartelle**
+Come già detto, attraverso questo sistema di cloud storage, è possibile anche condividere progetti e cartelle con gli altri utenti.
+La condivisione viene realizzata attraverso semplici operazioni mostrate nella figura seguente.
+
+![drive](imgs/Condivisione.png)
+
+Scelta la voce di menù per la condivisione, viene aperta una modale in cui è possibile scegliere l'utente con cui condividere il progetto o la cartella e cliccare sul pulsante *SHARE* per effettuare la condivisione.
