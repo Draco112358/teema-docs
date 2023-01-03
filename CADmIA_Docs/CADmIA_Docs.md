@@ -18,8 +18,10 @@ Tramite una serie di componenti base (in futuro estendibili) componibili, si pu�
 
 ## **Panoramica dell'architettura**
 
-Vediamo innanzitutto uno schema di massima dell'architettura di CADmIA, con esempi di relazioni tra i vari strati per alcune funzionalità specifiche.<br>
-![cadmia_architettura](imgs/cadmia_arch.png)<br>
+Vediamo innanzitutto uno schema di massima dell'architettura di CADmIA, con esempi di relazioni tra i vari strati per alcune funzionalità specifiche.
+
+![cadmia_architettura](imgs/cadmia_arch.png)
+
 L'applicazione è basata su due tecnologie prinicipali lato client:
 - *ReactJS*, per lo sviluppo dell'interfaccia;
 - *ThreeJS*, per la rappresentazione dei modelli 3D.
@@ -45,6 +47,7 @@ Allo stato attuale, sono disponibili 5 modelli di base (vedi immagine seguente),
 - *cono*, con altezza e raggio di base.
 
 ![modelli_base](imgs/base_components.png)
+
 Ognuno di essi ha poi degli attributi riguardanti il numero di segmenti da utilizzare per rappresentare le varie superfici che lo compongono. Questi non riguardano le proprietà geometriche degli oggetti, ma la loro rappresentazione in ThreeJS, che li vede come Mesh, quindi composizioni di unità più piccole. Quanto più grande è il numero di segmenti impostato per le superfici di un oggetto, tanto maggiore sarà il suo livello di dettaglio, tanto più onerosa sarà la sua rappresentazione.
 Sta quindi all'utente scegliere il giusto compromesso tra prestazioni e precisione richiesta.
 ___
@@ -60,7 +63,9 @@ Allo stesso modo se volessimo una piramide a base quadrata, potremmo partire da 
 
 Per la creazione di modelli complessi, i componenti base con i loro attributi regolabili da soli non sono sufficienti. Abbiamo allora aggiunto la possibilità di effettuare delle operazioni binarie tra essi, in modo da comporli assieme in oggetti di complessità arbitraria.
 Nella figura seguente possiamo vedere semplici esempi di unione, intersezione e differenza.
+
 ![bynary_ops](imgs/bynary_ops.png)
+
 Utilizzando la specifica toolbar posta sulla sinistra è possibile selezionare il tipo di operazione desiderata per entrare nella modalità "Binary Operation": ve ne accorgerete perché gli oggetti diverranno semitrasparenti. A questo punto potremo selezionare i singoli oggetti sui quali effettuare l'operazione (che risulteranno evidenziati rispetto agli altri) e infine avviarla dalla toolbar. <br> 
 Qualora avessimo selezionato un oggetto per sbaglio, ci basterà cliccare nuovamente su di esso per deselezionarlo.<br> 
 In qualsiasi momento, sempre dalla toolbar, è possibile annullare l'intera procedura, uscendo dalla modalità "Binary Operation".
@@ -77,7 +82,9 @@ Ogni volta che selezioniamo un oggetto, su di esso si attiveranno dei controlli 
 - *scalamento*, per ridimensionare l'oggetto, sempre lungo i suoi assi.
 
 Nella figura possiamo vedere come si presentano i controlli nei tre casi.
+
 ![movimenti](imgs/movements.png)
+
 Nell'immagine si nota inoltre l'apposita toolbar in alto a sinistra, che ci permette di selezionare la specifica trasformazione. In alternativa, come scorciatoia, possiamo utilizzare il click destro sull'oggetto, che passerà dall'una all'atra in sequenza.
 
 Per un risultato più accurato, ad esempio spostamenti di precisione, è possibile impostare direttamente i valori numerici relativi alle tre trasformazioni tramite la SideBar, come si può vedere nella figura seguente.
@@ -88,21 +95,28 @@ Per un risultato più accurato, ad esempio spostamenti di precisione, è possibi
 Un'operazione comune, utile per risparmiare tempo, è quella di clonazione, che replica un oggetto esistente con tutte le sue proprietà.<br>
 Per effettuare questa operazione basta selezionare l'oggetto e poi utilizzare il comando apposito che si può vedere nella figura seguente, dove l'abbiamo usato per clonare una piramide.<br>
 Comunque, seppur identico all'originale, il nuovo oggetto creato è completamente indipendente da esso.
+
 ![clone](imgs/clone.png)
 
 ### **Materiali**
 
 Oltre le caratteristiche geometriche, è possibile assegnare agli oggetti anche dei materiali.<br>
-Nella figura seguente vediamo la selezione del materiale tramite la SideBar. Per poter utilizzare i materiali bisogna essere loggati.<br>
+Nella figura seguente vediamo la selezione del materiale tramite la SideBar. Per poter utilizzare i materiali bisogna essere loggati.
+
 ![selezione_materiale](imgs/materials.png)
-L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, che assumerà il colore definito da quello, comporta per l'oggetto anche l'assunzione di tutte le proprietà fisiche del materiale stesso. Nella figura sottostante si possono vedere alcune proprietà specifiche che i materiali portano con sé. <br>
-![materiale_dettagli](imgs/material_details.png) <br>
+
+L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, che assumerà il colore definito da quello, comporta per l'oggetto anche l'assunzione di tutte le proprietà fisiche del materiale stesso. Nella figura sottostante si possono vedere alcune proprietà specifiche che i materiali portano con sé.
+
+![materiale_dettagli](imgs/material_details.png)
+
 Al momento le proprietà fisiche di interesse sono quelle di natura elettrica/elettronica, ma in futuro potranno esserne aggiunte altre, ad esempio proprietà meccaniche.
 
 ### **Import/Export**
 
 Per quanto riguarda le funzionalità di import/export, abbiamo tre opzioni disponibili al momento. Nella figura possiamo vedere il menu relativo.
+
 ![import_export](imgs/import_export_menu.png)
+
 In particolare abbiamo:
 - Export
   - *Save to DB*. Salva il modello sul server e richiede il login.<br> Selezionando l'apposita voce di menù ci verrà chiesto di inserire un nome per il modello da salvare. Nel modello saranno compresi tutti gli oggetti presenti nella scena.
