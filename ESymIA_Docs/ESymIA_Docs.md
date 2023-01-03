@@ -1,5 +1,5 @@
 # ESymIA Docs <!-- omit in toc -->
-
+### Versione 0.0.1 <!-- omit in toc -->
 - [**Scopo**](#scopo)
 - [**Panoramica dell'architettura**](#panoramica-dellarchitettura)
 - [**Funzionalità**](#funzionalità)
