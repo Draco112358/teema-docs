@@ -56,7 +56,10 @@ Per una lista completa delle simulazioni effettuate, si può invece far riferime
 
 #### **Modeler**
 
-Una volta aperto un progetto, ci ritroveremo automaticamente nella sezione *Modeler*, dalla quale potremo importare, tramite due pulsanti appositi, un modello dal database o da file locale. Il risultato è visibile nella figura seguente.
+Una volta aperto un progetto, ci ritroveremo automaticamente nella sezione *Modeler*, dalla quale potremo importare, tramite due pulsanti appositi, un modello dal database o da file locale.
+![modeler](imgs/Import_modello.png)
+
+Il risultato è visibile nella figura seguente.
 
 ![modeler](imgs/modeler.png)
 
