@@ -29,7 +29,7 @@ L'applicazione è basata su due tecnologie prinicipali lato client:
 Per quanto riguarda la parte server, invece, ne sfrutta essenzialmente tre:
 - *Auth0*, per le procedure di autenticazione e gestione degli utenti;
 - *Fauna*, per la gestione dei dati dell'app, con le relative politiche di accesso ad essi da parte degli utenti;
-- *AWS*, utilizzato come storage per i modelli salvati, che possono arrivare a dimensioni considerevoli, non gestibili direttamente tramite Fauna.<br>
+- *AWS*, utilizzato come storage per i modelli 3D da importare, che possono arrivare a dimensioni considerevoli, non gestibili direttamente tramite Fauna.<br>
 
 ## **Funzionalità**
 
