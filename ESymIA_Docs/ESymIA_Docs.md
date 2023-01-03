@@ -131,6 +131,6 @@ Tali funzionalita vengono rese disponibili all’utente attraverso un menù atti
 #### **Condivisione progetti e cartelle**
 Come già detto, attraverso questo sistema di cloud storage, è possibile anche condividere progetti e cartelle con gli altri utenti.
 Come si vede dalla figura seguente, una volta selezionata l'opzione *Share*, potremo selezionare l'utente con cui condivere, ricercandolo per email (in futuro anche per nome).<br>
-Questa funzionalità è dispponibile unicamente per gli utenti Premium.
+Questa funzionalità è disponibile unicamente per gli utenti Premium.
 
 ![drive_condivisione](imgs/Condivisione.png)
