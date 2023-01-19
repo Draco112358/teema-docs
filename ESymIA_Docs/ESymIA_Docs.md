@@ -79,11 +79,13 @@ Le porte, costituite visivamente da coppie di elementi congiunti da una linea, d
 Nella figura sottostante possiamo vederne una di esempio. Oltre alle informazioni sulle posizioni di applicazione e lettura, le porte mantengono anche informazioni specifiche sulle loro caratteristiche interne, rappresentate da un circuito associato e da una tupla di parametri RLC.
 Tutte queste informazioni si possono impostare tramite il comodo menu in alto a destra nella sezione. 
 
-#### **NOTA** <!-- omit in toc -->
-Affinché queste informazioni vengano effettivamente salvate, è necessario sfruttare l'apposito pulsante *SAVE* presente nel menu, altrimenti andranno perse e non verranno mostrate in una sessione successiva. 
-Tale pulsante risulta disabilitato quando le configurazioni visualizzate corrispondono a informazioni aggiornate, non appena l'utente modifica una o più configurazioni, il pulsante viene abilitato per permettere l'aggiornamento delle informazioni.
-
 ![physics](imgs/physics.png)
+
+___
+##### **NOTA** <!-- omit in toc -->
+Ricordate di salvare eventuali aggiornamenti alle impostazioni delle porte tramite l'apposito pulsante *SAVE*, altrimenti non verranno considerati.
+___
+
 
 Nell'immagine vediamo anche un menu centrale, dal quale è possibile selezionare le nostre porte tra tre differenti categorie, ognuna con vincoli interni leggermente differenti, a seconda della specifica simulazione da eseguire.
 
