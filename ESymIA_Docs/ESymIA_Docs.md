@@ -77,7 +77,7 @@ In questa sezione entriamo nel vivo della simulazione, andando proprio ad impost
 
 Le porte, costituite visivamente da coppie di elementi congiunti da una linea, definiscono innanzitutto i punti di applicazione e lettura per le correnti o differenze di potenziale in input alla simulazione.<br>
 Nella figura sottostante possiamo vederne una di esempio. Oltre alle informazioni sulle posizioni di applicazione e lettura, le porte mantengono anche informazioni specifiche sulle loro caratteristiche interne, rappresentate da un circuito associato e da una tupla di parametri RLC.
-Tutte queste informazioni si possono impostare tramite il comodo menu in alto a destra nella sezione. 
+Tutte queste informazioni si possono impostare tramite la comoda finestra in alto a destra nella sezione. 
 
 ![physics](imgs/physics.png)
 
