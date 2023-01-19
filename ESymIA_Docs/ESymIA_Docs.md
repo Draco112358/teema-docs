@@ -120,7 +120,7 @@ Nell'immagine possiamo vedere una schermata d'esempio di possibili risultati.
 
 ![results](imgs/results.png)
 
-Tramite i pulsanti posti nella fascia al di sopra dei grafici è possibile regolare alcune impostazioni di visualizzazione, come la visita su una colonna (grafici più grandi) o su due (più compatta), oltre alla scala delle ascisse dei grafici (lineare o logaritmica).
+Tramite i pulsanti posti nella fascia al di sopra dei grafici è possibile regolare alcune impostazioni di visualizzazione, come la vista su una colonna (grafici più grandi) o su due (più compatta), oltre alla scala delle ascisse dei grafici (lineare o logaritmica).
 
 ### **Storage utente**
 Per il mantenimento, il recupero e l'organizzazione dei progetti creati dall'utente, viene messo a disposizione un sistema di cloud storage, mediante il quale è possibile:
@@ -134,8 +134,7 @@ Tali funzionalita vengono rese disponibili all’utente attraverso un menù atti
 
 #### **Condivisione progetti e cartelle**
 Come già detto, attraverso questo sistema di cloud storage, è possibile anche condividere progetti e cartelle con gli altri utenti.
-La condivisione viene realizzata attraverso semplici operazioni mostrate nella figura seguente.
+Come si vede dalla figura seguente, una volta selezionata l'opzione *Share*, potremo selezionare l'utente con cui condivere, ricercandolo per email (in futuro anche per nome).<br>
+Questa funzionalità è disponibile unicamente per gli utenti Premium.
 
-![drive](imgs/Condivisione.png)
-
-Scelta la voce di menù per la condivisione, viene aperta una modale in cui è possibile scegliere l'utente con cui condividere il progetto o la cartella e cliccare sul pulsante *SHARE* per effettuare la condivisione.
+![drive_condivisione](imgs/Condivisione.png)
