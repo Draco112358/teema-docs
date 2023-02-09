@@ -8,6 +8,7 @@
     - [**Physics**](#physics)
       - [**Porte**](#porte)
       - [**Segnali**](#segnali)
+      - [**Import/Export physics setup**](#importexport-physics-setup)
     - [**Simulator**](#simulator)
     - [**Results**](#results)
   - [**Storage utente**](#storage-utente)
@@ -100,6 +101,10 @@ Vengono assegnati tramite il menu in basso a destra della sezione (vedi figura s
 ![signal_details](imgs/signal_details.png)
 
 Come si vede dalla figura, per ogni segnale impostato, possiamo poi visualizzarne i dettagli (valori numerici e rappresentazioni grafiche).
+
+##### **Import/Export physics setup**
+
+Per impostare velocemente nuove simulazioni sullo stesso modello, è possibile inoltre esportare le impostazioni di porte e segnali in un file json da reimportare poi nella nuova simulazione, tramite i due pulsanti a fianco al menu per la selezione delle porte.
 
 #### **Simulator**
 
