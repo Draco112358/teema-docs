@@ -106,9 +106,9 @@ Come si vede dalla figura, per ogni segnale impostato, possiamo poi visualizzarn
 Una volta impostate porte e relativi segnali, possiamo passare alla sezione *Simulator*, nella quale andremo ad eseguire l'operazione di meshing, ovvero una scomposizione del modello in elementi semplici (parallelepipedi nel nostro caso) più piccoli. I calcoli verranno poi eseguiti in parallelo sui singoli elementi e il risultato finale della simulazione sarà dato da una composizione di tutti i risultati parziali.<br>
 In questa sezione l'unica cosa che dobbiamo impostare sono le dimensioni desiderate per il parallelepipedo campione da usare nella scomposizione. Lo facciamo tramite il comodo menu visibile in figura.
 
-![meshing](imgs/mesh_sim.png)
+![meshing](imgs/meshing_solving.png)
 
-Nella figura vediamo il risultato del meshing, con il nostro modello scomposto. A questo punto, se il risultato è soddisfacente, possiamo proseguire avviando la simulazione vera e propria, altrimenti possiamo modificare le dimensioni del parallelepipedo campione e rieseguire l'operazione di meshing, fino ad ottenere un risultato accettabile.<br>
+Nella figura vediamo il risultato del meshing, con il nostro modello scomposto. A questo punto, se il risultato è soddisfacente, possiamo proseguire avviando la simulazione vera e propria, andando ad impostare i parametri *Inner Iterations*, *Outer Iterations* e *Convergence Treshold* per il solver iterativo, altrimenti possiamo modificare le dimensioni del parallelepipedo campione e rieseguire l'operazione di meshing, fino ad ottenere un risultato accettabile.<br>
 La procedura si conclude poi, in ogni caso, con l'avvio della simulazione tramite il pulsante *Start Simulation*.
 
 #### **NOTA** <!-- omit in toc -->
