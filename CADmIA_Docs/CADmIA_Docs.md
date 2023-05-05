@@ -53,7 +53,9 @@ Allo stato attuale, sono disponibili 5 modelli di base (vedi immagine seguente),
 
 ![modelli_base](imgs/base_components.png)
 
-Ognuno di essi ha poi degli attributi riguardanti il numero di segmenti da utilizzare per rappresentare le varie superfici che lo compongono. Questi non riguardano le proprietà geometriche degli oggetti, ma la loro rappresentazione in ThreeJS, che li vede come Mesh, quindi composizioni di unità più piccole. Quanto più grande è il numero di segmenti impostato per le superfici di un oggetto, tanto maggiore sarà il suo livello di dettaglio, tanto più onerosa sarà la sua rappresentazione.
+È possibile inserirli nella scena sia tramite l'apposita voce di menu nell navbar che tramite una comoda toolbar (evidenziata in giallo nell'immagine).
+
+Ognuno dei modelli ha poi degli attributi riguardanti il numero di segmenti da utilizzare per rappresentare le varie superfici che lo compongono. Questi non riguardano le proprietà geometriche degli oggetti, ma la loro rappresentazione in ThreeJS, che li vede come Mesh, quindi composizioni di unità più piccole. Quanto più grande è il numero di segmenti impostato per le superfici di un oggetto, tanto maggiore sarà il suo livello di dettaglio, tanto più onerosa sarà la sua rappresentazione.
 Sta quindi all'utente scegliere il giusto compromesso tra prestazioni e precisione richiesta.
 ___
 #### *Esempio* <!-- omit in toc -->
