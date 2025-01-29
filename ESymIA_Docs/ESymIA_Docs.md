@@ -3,7 +3,8 @@
 ## Versione 0.0.1 <!-- omit in toc -->
 
 - [**Scopo**](#scopo)
-- [**Panoramica dell'architettura**](#panoramica-dellarchitettura)
+<!-- - [**Panoramica dell'architettura**](#panoramica-dellarchitettura) -->
+- [**Scopo**](#scopo)
 - [**Funzionalità**](#funzionalità)
   - [**Progetti di simulazione**](#progetti-di-simulazione)
     - [**Modeler**](#modeler)
@@ -19,7 +20,7 @@
 
 ESymIA è un'applicazione per la simulazione delle caratteristiche elettriche/elettroniche di modelli 3D, basandosi su metodologie FEM.
 
-## **Panoramica dell'architettura**
+<!-- ## **Panoramica dell'architettura**
 
 Vediamo innanzitutto uno schema di massima dell'architettura di CADmIA, con esempi di relazioni tra i vari strati per alcune funzionalità specifiche.</br>
 ![esymia_architecture](imgs/esymia_arch.png)</br>
@@ -32,7 +33,7 @@ Per quanto riguarda la parte server, invece, ne sfrutta essenzialmente tre:
 
 - *Auth0*, per le procedure di autenticazione e gestione degli utenti;
 - *Fauna*, per la gestione dei dati dell'app, con le relative politiche di accesso ad essi da parte degli utenti;
-- *AWS*, utilizzato come storage per i modelli 3D da importare, che possono arrivare a dimensioni considerevoli, non gestibili direttamente tramite Fauna.</br>
+- *AWS*, utilizzato come storage per i modelli 3D da importare, che possono arrivare a dimensioni considerevoli, non gestibili direttamente tramite Fauna.</br> -->
 
 ## **Funzionalità**
 
