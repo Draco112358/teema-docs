@@ -3,6 +3,7 @@
 - [**Scopo**](#scopo)
 - [**Panoramica dell'architettura**](#panoramica-dellarchitettura)
 - [**Funzionalità**](#funzionalità)
+  - [**Muoversi nella scena**](#muoversi-nella-scena)
   - [**Modelli base**](#modelli-base)
   - [**Composizione con operazioni binarie**](#composizione-con-operazioni-binarie)
   - [**Trasformazioni**](#trasformazioni)
@@ -33,9 +34,13 @@ Per quanto riguarda la parte server, invece, ne sfrutta essenzialmente tre:
 
 ## **Funzionalità**
 
-La parte principale dell'interfaccia è rappresentata dal Canvas, lo spazio nel quale verranno creati i modelli. Una delle sue principali funzionalità è la possibilità di ruotare la scena, cambiando l'angolo di visuale. Per far questo basta cliccare in un punto vuoto della scena e, tenendo premuto, muoversi ruotando la visuale.<br>
+La parte principale dell'interfaccia è rappresentata dal Canvas, lo spazio nel quale verranno creati i modelli. 
+
+### **Muoversi nella scena**
+
+Una delle sue principali funzionalità è la possibilità di ruotare la scena, cambiando l'angolo di visuale. Per far questo basta cliccare in un punto vuoto della scena e, tenendo premuto, muoversi ruotando la visuale.<br>
 Un'altra funzione molto utile è quella di zoom, attivabile tramite le analoghe procedure di touchpad e mouse.<br>
-Una cosa da tenere presente è che il punto di vista è centrato di default sull'origine degli assi di riferimento, per cui sia la rotazione della scena che lo zoom saranno realizzati rispetto a quel punto specifico. In alcuni casi però vorremo poter vedere nel dettaglio uno specifico oggetto: in questo caso prima di effettuare zoom o rotazioni di scena, possiamo prima centrare il punto di vista sull'oggetto specifico, con un doppio click su di esso.
+Una cosa da tenere presente è che il punto di vista è centrato di default sull'origine degli assi di riferimento, per cui sia la rotazione della scena che lo zoom saranno realizzati rispetto a quel punto specifico. In alcuni casi però vorremo poter vedere nel dettaglio uno specifico oggetto: in questo caso prima di effettuare zoom o rotazioni di scena, possiamo centrare il punto di vista sull'oggetto specifico, con un doppio click su di esso. Sarà sempre possibile reimpostare il punto di vista di default sull'origine degli assi, tramite il menu *View->Reset Orbit To Origin*.
 
 ### **Modelli base**
 
@@ -48,7 +53,9 @@ Allo stato attuale, sono disponibili 5 modelli di base (vedi immagine seguente),
 
 ![modelli_base](imgs/base_components.png)
 
-Ognuno di essi ha poi degli attributi riguardanti il numero di segmenti da utilizzare per rappresentare le varie superfici che lo compongono. Questi non riguardano le proprietà geometriche degli oggetti, ma la loro rappresentazione in ThreeJS, che li vede come Mesh, quindi composizioni di unità più piccole. Quanto più grande è il numero di segmenti impostato per le superfici di un oggetto, tanto maggiore sarà il suo livello di dettaglio, tanto più onerosa sarà la sua rappresentazione.
+È possibile inserirli nella scena sia tramite l'apposita voce di menu nell navbar che tramite una comoda toolbar (evidenziata in giallo nell'immagine).
+
+Ognuno dei modelli ha poi degli attributi riguardanti il numero di segmenti da utilizzare per rappresentare le varie superfici che lo compongono. Questi non riguardano le proprietà geometriche degli oggetti, ma la loro rappresentazione in ThreeJS, che li vede come Mesh, quindi composizioni di unità più piccole. Quanto più grande è il numero di segmenti impostato per le superfici di un oggetto, tanto maggiore sarà il suo livello di dettaglio, tanto più onerosa sarà la sua rappresentazione.
 Sta quindi all'utente scegliere il giusto compromesso tra prestazioni e precisione richiesta.
 ___
 #### *Esempio* <!-- omit in toc -->
