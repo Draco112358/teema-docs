@@ -127,10 +127,12 @@ L'applicazione prevede due tipologie di *Mesher*:
 
 - uno che restituisce una scomposizione del modello in elementi semplici tutti della stessa dimensione (*Mesher 1*);
 - uno che restituisce una scomposizione del modello in elementi semplici di dimensioni diverse (*Mesher 2*).
+
 Questo perchè sono disponibili due tipi di solver:
 
 - Solver *PEEC-FFT*
 - Solver *PEEC-Denso*
+
 per i quali è necessario partire da due input differenrti. </br>
 Il solver *PEEC-FFT* ha bisogno in input di una mesh formata da elementi della stessa dimensione, mentre il solver *PEEC-Denso* necessita in input di una mesh formata da elementi di dimensioni diverse.
 A questo punto, è doveroso fare una precisazione. L'utilizzo dei due mesher dipende molto da come è stato costruito, in CADmIA, il modello importato nella sezione *Modeler*. Se il modello è stato realizzato semplicemente attraverso la definizione di una serie di bricks (cubi), allora è possibile generare la mesh sfruttando sia *Mesher 1* che *Mesher 2*. Altrimenti, se il modello è stato costruito a partire da un STL o effettuando operazioni booleane, l'unico mesher utilizzabile è il *Mesher 1*.
@@ -140,8 +142,8 @@ Per il *Mesher 2* è possibile settare il paramentro Lambda Factor, aumentandolo
 Una volta generata la mesh, il solver da lanciare, verrà selezionato automaticamente in base alla tipologia di mesher selezionata.
 Di seguito vengono mostrate due immagini che mostrano rispettivamente:
 
-  - la mesh generata grazie al *Mesher 1*;
-  - la mesh generata grazie al *Mesher 2*.
+- la mesh generata grazie al *Mesher 1*;
+- la mesh generata grazie al *Mesher 2*.
 
 ![meshing](imgs/mesh_sim1.png)
 ![meshing](imgs/mesh_sim2.png)
