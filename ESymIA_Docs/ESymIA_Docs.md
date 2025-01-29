@@ -103,7 +103,7 @@ ___
 
 Nell'immagine vediamo anche un menu centrale, dal quale è possibile, da sinistra verso destra:
 
-- selezionare le porte tra due differenti categorie, porte e lumped, ognuna con vincoli interni leggermente differenti, a seconda della specifica simulazione da eseguire;
+- aggiungere le porte scegliendo tra due differenti categorie, porte e lumped, ognuna con vincoli interni leggermente differenti, a seconda della specifica simulazione da eseguire;
 - abilitare i suggerimenti sul posizionamento delle porte;
 - resettare il focus della camera nel canvas;
 - mostrare informazioni sul posizionamento delle porte;
