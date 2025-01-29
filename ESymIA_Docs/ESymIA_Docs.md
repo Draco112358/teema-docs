@@ -138,7 +138,7 @@ Il solver *PEEC-FFT* ha bisogno in input di una mesh formata da elementi della s
 A questo punto, è doveroso fare una precisazione. L'utilizzo dei due mesher dipende molto da come è stato costruito, in CADmIA, il modello importato nella sezione *Modeler*. Se il modello è stato realizzato semplicemente attraverso la definizione di una serie di bricks (cubi), allora è possibile generare la mesh sfruttando sia *Mesher 1* che *Mesher 2*. Altrimenti, se il modello è stato costruito a partire da un STL o effettuando operazioni booleane, l'unico mesher utilizzabile è il *Mesher 1*.
 Dato che l'utente, dopo la generazione della mesh, può decidere di lanciare la simulazione o di cambiare la mesh, i due mesher prevedono dei parametri di configurazione in input che permettono di aumentare o diminuire il numero di elementi finiti che compongono la mesh.
 Per il *Mesher 1* è possibile, tramite gli appositi pulsanti, incrementare o decrementare le dimensioni dei singoli elementi sui tre assi, x, y e z.
-Per il *Mesher 2* è possibile settare il paramentro Lambda Factor, aumentandolo verrà generata una mesh con un numero di elementi finiti maggiore, diminuendola verrà generata una mesh con un numero di elementi finiti minore.
+Per il *Mesher 2* è possibile settare il paramentro Lambda Factor, aumentandolo verrà generata una mesh con un numero di elementi finiti maggiore, diminuendolo verrà generata una mesh con un numero di elementi finiti minore.
 Una volta generata la mesh, il solver da lanciare, verrà selezionato automaticamente in base alla tipologia di mesher selezionata.
 Di seguito vengono mostrate due immagini che mostrano rispettivamente:
 
