@@ -70,7 +70,7 @@ Il risultato è visibile nella figura seguente.
 
 In questa sezione, tramite le icone posizionate in alto a sinistra, possiamo vedere dettagli del modello, ovvero i vari elementi che costituiscono la sua struttura interna, e informazioni sui relativi materiali.</br>
 Le informazioni sono a puro scopo documentativo, da ESymIA non è possibile modificare i modelli importati.</br>
-Una volta importato il modello, tramite l'apposita icona, è possibile cambiarlo nel caso in cui è necessario. </br>
+Una volta importato il modello, tramite l'apposita icona, è possibile cambiarlo nel caso in cui fosse necessario. </br>
 Inoltre, è anche presente la funzionalità di clonazione dell'intero progetto. (Funzionalità disponibile in tutte le sezioni **Modeler**, **Terminations**, **Simulator**, **Results**) </br>
 A questo punto possiamo proseguire nella procedura di simulazione con la sezione successiva.
 
