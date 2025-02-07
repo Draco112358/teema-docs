@@ -13,6 +13,9 @@
   - [**Trasformazioni**](#trasformazioni)
   - [**Clonazione di oggetti**](#clonazione-di-oggetti)
   - [**Materiali**](#materiali)
+  - [**Costruzione del modello: Standard vs Ris**](#costruzione-del-modello-standard-vs-ris)
+    - [**Standard**](#standard)
+    - [**Ris**](#ris)
   - [**Import/Export**](#importexport)
 
 ## **Scopo**
@@ -108,16 +111,15 @@ Ogni volta che selezioniamo un oggetto, su di esso si attiveranno dei controlli 
 Nella figura possiamo vedere come si presentano i controlli nei tre casi.
 
 ![movimenti](imgs/movements.png)
+Per selezionare la specifica trasformazione è necessario attivare l'apposita toolbar tramite la voce di menù *View->Trasformations toolbar*.
 
-Nell'immagine si nota inoltre l'apposita toolbar in alto a sinistra, che ci permette di selezionare la specifica trasformazione. In alternativa, come scorciatoia, possiamo utilizzare il click destro sull'oggetto, che passerà dall'una all'atra in sequenza.
-
-Per un risultato più accurato, ad esempio spostamenti di precisione, è possibile impostare direttamente i valori numerici relativi alle tre trasformazioni tramite la SideBar, come si può vedere nella figura seguente.
+Per un risultato più accurato, ad esempio spostamenti di precisione, è possibile impostare direttamente i valori numerici relativi alle tre trasformazioni tramite la i campi di input presenti nella modale attivabile grazie al pulsante *Change Transformation Params*, come si può vedere nella figura seguente.
 ![spostamenti_accurati](imgs/accurate_movements.png)
 
 ### **Clonazione di oggetti**
 
 Un'operazione comune, utile per risparmiare tempo, è quella di clonazione, che replica un oggetto esistente con tutte le sue proprietà.</br>
-Per effettuare questa operazione basta selezionare l'oggetto e poi utilizzare il comando apposito che si può vedere nella figura seguente, dove l'abbiamo usato per clonare una piramide.</br>
+Per effettuare questa operazione basta selezionare l'oggetto e poi utilizzare il comando apposito che si può vedere nella figura seguente, evidenziato in giallo, dove l'abbiamo usato per clonare un cubo.</br>
 Comunque, seppur identico all'originale, il nuovo oggetto creato è completamente indipendente da esso.
 
 ![clone](imgs/clone.png)
@@ -129,11 +131,34 @@ Nella figura seguente vediamo la selezione del materiale tramite la SideBar. Per
 
 ![selezione_materiale](imgs/materials.png)
 
-L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, che assumerà il colore definito da quello, comporta per l'oggetto anche l'assunzione di tutte le proprietà fisiche del materiale stesso. Nella figura sottostante si possono vedere alcune proprietà specifiche che i materiali portano con sé.
+L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, che assumerà il colore definito da quello, comporta per l'oggetto anche l'assunzione di tutte le proprietà fisiche del materiale stesso. Nella figura sottostante si possono vedere alcune proprietà specifiche che i materiali portano con sé, nel riquadro evidenziato in giallo.
 
 ![materiale_dettagli](imgs/material_details.png)
 
 Al momento le proprietà fisiche di interesse sono quelle di natura elettrica/elettronica, ma in futuro potranno esserne aggiunte altre, ad esempio proprietà meccaniche.
+
+### **Costruzione del modello: Standard vs Ris**
+
+Un modello può essere definito tramite due strategie operative:
+
+- Standar
+- Ris
+
+#### **Standard**
+
+Questa prevede la costruzione del modello tramite l'import di file STL, oppure sfruttando le forme di base messe a disposizione, applicando su di esse operazioni booleane.
+Nel seguente video verrà mostrato un esempio di costruzione del modello secondo la strategia Standard.
+
+[![Watch the video](imgs/preview_costruzione_standard.png)](https://drive.google.com/file/d/1G6FwOC39eJICPSjqcWjQ-OQXU5YCBnVT/view?usp=drive_link)
+
+#### **Ris**
+
+In questo caso la costruzione del modello avviene attraverso la definizione di una serie di bricks (cubi).
+Nel seguente video verrà mostrato un esempio di costruzione del modello secondo la strategia Ris.
+
+[![Watch the video](imgs/preview_costruzione_standard.png)](https://drive.google.com/file/d/15c3hguSWPQ9-VdZRlTWC7nePjricLIPi/view?usp=drive_link)
+
+È fondamentale distinguere tra le diverse strategie, poiché la scelta adottata influirà sulla simulazione futura del modello. In particolare, durante la fase preliminare della simulazione, che prevede la suddivisione del modello in una serie di elementi semplici (nel nostro caso, parallelepipedi), se il modello è stato generato utilizzando la strategia *Standar*, verranno restituiti elementi di dimensioni uniformi; al contrario, adottando la strategia *Ris*, si otterranno elementi di dimensioni variabili.
 
 ### **Import/Export**
 
@@ -144,10 +169,12 @@ Per quanto riguarda le funzionalità di import/export, abbiamo tre opzioni dispo
 In particolare abbiamo:
 
 - Export
-  - *Save to DB*. Salva il modello sul server e richiede il login.</br> Selezionando l'apposita voce di menù ci verrà chiesto di inserire un nome per il modello da salvare. Nel modello saranno compresi tutti gli oggetti presenti nella scena.
+  - *Save As*. Salva il modello, costruito attraverso la strategia Standard, sul server e richiede il login.</br> Selezionando l'apposita voce di menù ci verrà chiesto di inserire un nome per il modello da salvare. Nel modello saranno compresi tutti gli oggetti presenti nella scena.
+  - *Save With Ris Geometry Data*. Salva il modello, costruito attraverso la strategia Ris, sul server e richiede il login.</br> Selezionando l'apposita voce di menù ci verrà chiesto di inserire un nome per il modello da salvare. Nel modello saranno compresi tutti gli oggetti presenti nella scena.
   - *Export Project*. Tramite essa andremo ad esportare in locale, in formato JSON, tutti gli oggetti presenti nella scena.
   - *Export STL Format*. In questo caso esportiamo in locale gli oggetti presenti nella scena, ma in formato STL, uno standard molto diffuso.</br> Una differenza importante rispetto all'export in JSON è che, in questo caso, per vincoli di formato, tutti gli oggetti della scena verranno esportati come fossero un tutt'uno. Se ad esempio nella scena avessimo due oggetti distinti, essi verrebbero esportati come un'unica geometria, per cui un futuro import non ci permetterebbe di riavere gli oggetti distinti, ma solo la loro unione.</br> Perderemo, inoltre, le informazioni sui materiali assegnati ai vari oggetti.
 - Import
-  - *Load From DB*. Consente di riprendere un modello salvato sul server e richiede il login.</br> Tramite questa voce di menu ci si aprirà una finestra con una lista dei modelli precedentemente salvati da noi sul database, per poterne selezionare uno da caricare nella scena.
-  - *Import Project*. Questa opzione consente di caricare nella scena un modello salvato precedentemente in formato JSON.
+  - *Load*. Consente di riprendere un modello salvato sul server e richiede il login.</br> Tramite questa voce di menu ci si aprirà una finestra con una lista dei modelli precedentemente salvati da noi sul database, per poterne selezionare uno da caricare nella scena.
+  - *Import Project*. Questa opzione consente di caricare nella scena un modello Standar salvato precedentemente in formato JSON.
   - *Import STL File*. In questo caso andiamo a caricare il modello da un file STL locale.
+  - *Import Ris Geometry*. In questo caso andiamo a caricare il modello Ris salvato precedentemente in formato JSON.
