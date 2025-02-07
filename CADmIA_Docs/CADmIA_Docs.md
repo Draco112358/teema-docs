@@ -7,6 +7,9 @@
   - [**Muoversi nella scena**](#muoversi-nella-scena)
   - [**Modelli base**](#modelli-base)
   - [**Composizione con operazioni binarie**](#composizione-con-operazioni-binarie)
+  - [**UNION**](#union)
+  - [**SUBTRACTION**](#subtraction)
+  - [**INTERSECTION**](#intersection)
   - [**Trasformazioni**](#trasformazioni)
   - [**Clonazione di oggetti**](#clonazione-di-oggetti)
   - [**Materiali**](#materiali)
@@ -74,9 +77,17 @@ Allo stesso modo se volessimo una piramide a base quadrata, potremmo partire da 
 Per la creazione di modelli complessi, i componenti base con i loro attributi regolabili da soli non sono sufficienti. Abbiamo allora aggiunto la possibilità di effettuare delle operazioni binarie tra essi, in modo da comporli assieme in oggetti di complessità arbitraria.
 Nella figura seguente possiamo vedere semplici esempi di unione, intersezione e differenza.
 
-[![Watch the video]](https://drive.google.com/file/d/19KtfHfh0f5q5LYYS-dfg_1Aq8amvg32r/view?usp=drive_link)
-[![Watch the video]](https://drive.google.com/file/d/1_QaBf2oB27M2EWSftPJpR7G5LicxU9Pc/view?usp=drive_link)
-[![Watch the video]](https://drive.google.com/file/d/1cJXbJoTGMf-F0H4JcrHaehVi5wS7LOKk/view?usp=drive_link)
+### **UNION**
+
+[![Watch the video](imgs/union.png)](https://drive.google.com/file/d/19KtfHfh0f5q5LYYS-dfg_1Aq8amvg32r/view?usp=drive_link)
+
+### **SUBTRACTION**
+
+[![Watch the video](imgs/subtraction.png)](https://drive.google.com/file/d/1_QaBf2oB27M2EWSftPJpR7G5LicxU9Pc/view?usp=drive_link)
+
+### **INTERSECTION**
+
+[![Watch the video](imgs/intersection.png)](https://drive.google.com/file/d/1cJXbJoTGMf-F0H4JcrHaehVi5wS7LOKk/view?usp=drive_link)
 
 Utilizzando la specifica toolbar posta sulla sinistra è possibile selezionare il tipo di operazione desiderata per entrare nella modalità "Binary Operation": ve ne accorgerete perché gli oggetti diverranno semitrasparenti. A questo punto potremo selezionare i singoli oggetti sui quali effettuare l'operazione (che risulteranno evidenziati rispetto agli altri) e infine avviarla dalla toolbar. </br>
 Qualora avessimo selezionato un oggetto per sbaglio, ci basterà cliccare nuovamente su di esso per deselezionarlo.</br>
