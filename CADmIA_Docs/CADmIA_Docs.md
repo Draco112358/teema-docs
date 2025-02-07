@@ -7,9 +7,9 @@
   - [**Muoversi nella scena**](#muoversi-nella-scena)
   - [**Modelli base**](#modelli-base)
   - [**Composizione con operazioni binarie**](#composizione-con-operazioni-binarie)
-  - [**UNION**](#union)
-  - [**SUBTRACTION**](#subtraction)
-  - [**INTERSECTION**](#intersection)
+    - [**UNION**](#union)
+    - [**SUBTRACTION**](#subtraction)
+    - [**INTERSECTION**](#intersection)
   - [**Trasformazioni**](#trasformazioni)
   - [**Clonazione di oggetti**](#clonazione-di-oggetti)
   - [**Materiali**](#materiali)
@@ -75,17 +75,17 @@ Allo stesso modo se volessimo una piramide a base quadrata, potremmo partire da 
 ### **Composizione con operazioni binarie**
 
 Per la creazione di modelli complessi, i componenti base con i loro attributi regolabili da soli non sono sufficienti. Abbiamo allora aggiunto la possibilità di effettuare delle operazioni binarie tra essi, in modo da comporli assieme in oggetti di complessità arbitraria.
-Nella figura seguente possiamo vedere semplici esempi di unione, intersezione e differenza.
+Nei seguenti video possiamo vedere semplici esempi di unione, intersezione e differenza.
 
-### **UNION**
+#### **UNION**
 
 [![Watch the video](imgs/union.png)](https://drive.google.com/file/d/19KtfHfh0f5q5LYYS-dfg_1Aq8amvg32r/view?usp=drive_link)
 
-### **SUBTRACTION**
+#### **SUBTRACTION**
 
 [![Watch the video](imgs/subtraction.png)](https://drive.google.com/file/d/1_QaBf2oB27M2EWSftPJpR7G5LicxU9Pc/view?usp=drive_link)
 
-### **INTERSECTION**
+#### **INTERSECTION**
 
 [![Watch the video](imgs/intersection.png)](https://drive.google.com/file/d/1cJXbJoTGMf-F0H4JcrHaehVi5wS7LOKk/view?usp=drive_link)
 
