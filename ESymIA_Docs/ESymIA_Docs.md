@@ -1,181 +1,180 @@
 # ESymIA Docs <!-- omit in toc -->
 
-## Versione 0.0.1 <!-- omit in toc -->
+## Version 0.0.1 <!-- omit in toc -->
 
-<!-- - [**Panoramica dell'architettura**](#panoramica-dellarchitettura) -->
-- [**Scopo**](#scopo)
-- [**Funzionalità**](#funzionalità)
-  - [**Progetti di simulazione**](#progetti-di-simulazione)
+<!-- - [**Architecture Overview**](#architecture-overview) -->
+- [**Purpose**](#purpose)
+- [**Features**](#features)
+  - [**Simulation Projects**](#simulation-projects)
     - [**Modeler**](#modeler)
     - [**Terminations**](#terminations)
-      - [**Porte**](#porte)
-      - [**Frequenze**](#frequenze)
+      - [**Ports**](#ports)
+      - [**Frequencies**](#frequencies)
     - [**Simulator**](#simulator)
     - [**Results**](#results)
-  - [**Storage utente**](#storage-utente)
-    - [**Condivisione progetti e cartelle**](#condivisione-progetti-e-cartelle)
+  - [**User Storage**](#user-storage)
+    - [**Project and Folder Sharing**](#project-and-folder-sharing)
 
-## **Scopo**
+## **Purpose**
 
-ESymIA è un'applicazione per la simulazione delle caratteristiche elettriche/elettroniche di modelli 3D, basandosi su metodologie FEM.
+ESymIA is an application for simulating the electrical/electronic characteristics of 3D models, based on FEM methodologies.
 
-<!-- ## **Panoramica dell'architettura**
+<!-- ## **Architecture Overview**
 
-Vediamo innanzitutto uno schema di massima dell'architettura di CADmIA, con esempi di relazioni tra i vari strati per alcune funzionalità specifiche.</br>
+Let's first look at a high-level diagram of the CADmIA architecture, with examples of relationships between the various layers for some specific functionalities.</br>
 ![esymia_architecture](imgs/esymia_arch.png)</br>
-L'applicazione è basata su due tecnologie prinicipali lato client:
+The application is based on two main client-side technologies:
 
-- *ReactJS*, per lo sviluppo dell'interfaccia;
-- *ThreeJS*, per la rappresentazione dei modelli 3D.
+- *ReactJS*, for interface development;
+- *ThreeJS*, for rendering 3D models.
 
-Per quanto riguarda la parte server, invece, ne sfrutta essenzialmente tre:
+On the server side, it essentially uses three:
 
-- *Auth0*, per le procedure di autenticazione e gestione degli utenti;
-- *Fauna*, per la gestione dei dati dell'app, con le relative politiche di accesso ad essi da parte degli utenti;
-- *AWS*, utilizzato come storage per i modelli 3D da importare, che possono arrivare a dimensioni considerevoli, non gestibili direttamente tramite Fauna.</br> -->
+- *Auth0*, for authentication and user management;
+- *Fauna*, for app data management, with related user access policies;
+- *AWS*, used as storage for 3D models to import, which can be quite large and not manageable directly through Fauna.</br> -->
 
-## **Funzionalità**
+## **Features**
 
-ESymIA è tutta incentrata sulla simulazione delle caratteristiche elettriche/elettroniche di modelli 3D. Tutte le sue funzionalità ruotano essenzialmente attorno a questo.
-In particolare il flusso di esecuzione di una simulazione si sviluppa in 4 step consecutivi:
+ESymIA is entirely focused on simulating the electrical/electronic characteristics of 3D models. All its features essentially revolve around this.
+Specifically, the execution flow of a simulation unfolds in 4 consecutive steps:
 
-- *Modeler*, dove andiamo ad importare il modello da testare;
-- *Physics*, nel quale aggiungiamo al modello le informazioni necessarie alla simulazione;
-- *Simulator*, nel quale andiamo ad eseguire l'operazione di meshing.
-- *Results*, dove visualizzeremo i risultati dei calcoli di simulazione.
+- *Modeler*, where the model to be tested is imported;
+- *Physics*, where the necessary information for the simulation is added to the model;
+- *Simulator*, where the meshing operation is performed;
+- *Results*, where the simulation calculation results are displayed.
 
-Torneremo in dettaglio su ognuno di essi nelle prossime sezioni.
+We will return in detail to each of these in the next sections.
 
-### **Progetti di simulazione**
+### **Simulation Projects**
 
-Il processo di simulazione è interamente racchiuso all'interno di un progetto. Per cui la prima cosa da fare un volta autenticati, sarà quella di aprirne uno.</br>
-Per far questo, a partire dalla dashboard (vedi la figura sottostante), abbiamo due opzioni disponibili:
+The simulation process is entirely enclosed within a project. So the first thing to do once authenticated is to open one.</br>
+To do this, from the dashboard (see the figure below), there are two available options:
 
-- creare un nuovo progetto tramite la voce *New Project*: ci verrà chiesto di inserire un nome per esso, oltre ad una descrizione opzionale;
-- proseguire con un progetto esistente tra quelli salvati sul database, che possiamo vedere listati nella sezione *My Files*.
+- create a new project using the *New Project* option: you will be asked to enter a name for it, along with an optional description;
+- continue with an existing project saved in the database, which can be viewed in the *My Files* section.
 
 ![dashboard](imgs/dashboard.png)
 
-Sempre nella dashboard, inoltre, si ha a disposizione la lista delle simulazioni effettuate, dalla quale è possibile andare a visualizzarne direttamente i risultati.
+Also in the dashboard, you have the list of simulations performed, from which you can directly view their results.
 
 #### **Modeler**
 
-Una volta aperto un progetto, ci ritroveremo automaticamente nella sezione *Modeler*, dalla quale potremo importare, tramite due pulsanti appositi, un modello dal database o da file locale.
+Once a project is open, you will automatically find yourself in the *Modeler* section, where you can import a model from the database or from a local file using two dedicated buttons.
 
 ![modeler_import](imgs/Import_modello.png)
 
-Il risultato è visibile nella figura seguente.
+The result is shown in the following figure.
 
 ![modeler_result](imgs/modeler.png)
 
-In questa sezione, tramite le icone posizionate in alto a sinistra, possiamo vedere dettagli del modello, ovvero i vari elementi che costituiscono la sua struttura interna, e informazioni sui relativi materiali.</br>
-Le informazioni sono a puro scopo documentativo, da ESymIA non è possibile modificare i modelli importati.</br>
-Una volta importato il modello, tramite l'apposita icona, è possibile cambiarlo nel caso in cui fosse necessario. </br>
-Inoltre, è anche presente la funzionalità di clonazione dell'intero progetto. (Funzionalità disponibile in tutte le sezioni **Modeler**, **Terminations**, **Simulator**, **Results**) </br>
-A questo punto possiamo proseguire nella procedura di simulazione con la sezione successiva.
+In this section, using the icons at the top left, you can view details of the model, namely the various elements that make up its internal structure, and information about their respective properties. These details are for documentation purposes only; ESymIA does not allow modification of imported models.</br>
+Once the model is imported, you can change it using the appropriate icon if necessary.</br>
+There is also a feature to clone the entire project (available in all sections: **Modeler**, **Terminations**, **Simulator**, **Results**).</br>
+At this point, you can proceed to the next step of the simulation process.
 
 #### **Terminations**
 
-Una simulazione consiste in sostanza nell'applicazione di correnti o differenze di potenziale in determinati punti del modello e la loro lettura in uscita in altri punti prestabiliti. Dal confronto tra input e output vengono determinate specifiche caratteristiche del modello.</br>
-In questa sezione entriamo nel vivo della simulazione, andando proprio ad impostarne le informazioni di input, definite tramite *porte*, *lumped* e *frequenze*.
+A simulation essentially consists of applying currents or potential differences at certain points of the model and reading them at other predetermined points. By comparing the input and output, the characteristics of the model are determined.</br>
+In this section, we get to the heart of the simulation, setting the input information, defined through *ports*, *lumped* elements, and *frequencies*.
 
-##### **Porte**
+##### **Ports**
 
-Le porte, costituite visivamente da coppie di elementi congiunti da una linea, definiscono innanzitutto i punti di applicazione e lettura per le correnti o differenze di potenziale in input alla simulazione.</br>
-Nella figura sottostante possiamo vederne una di esempio. Oltre alle informazioni sulle posizioni di applicazione e lettura, le porte prevedono anche il parametro di Scattering.
-I lumped elements, invece, mantengono informazioni specifiche sulle loro caratteristiche interne, rappresentate da un circuito associato e da una tupla di parametri RLC.
-Tutte queste informazioni si possono impostare tramite le icone in alto a sinistra nella sezione. </br>
-Per il posizionamento delle porte sul modello, abbiamo 4 alternative:
+Ports, visually represented by pairs of elements joined by a line, define the points of application and reading for the currents or potential differences input into the simulation.</br>
+The figure below shows an example. In addition to information on application and reading positions, ports also have a Scattering parameter.
+Lumped elements, on the other hand, hold specific information about their internal characteristics, represented by an associated circuit and an RLC parameter tuple.
+These details can be set using the icons at the top left of the section.</br>
+For placing ports on the model, there are 4 alternatives:
 
-- Doppio click su un punto d'interesse sulla superficie del modello.
-- Abilitanto i suggerimenti sulle posizioni delle terminazioni, cliccando l'apposita icona, e effettuando un doppio click su uno dei suggerimenti proposti.
-- Usando i campi di input presenti nella sezione Termination Settings.
-- Muovendo i controlli mostrati direttamente sulla porta selezionata (non raccomandato).
+- Double-click on a point of interest on the model's surface.
+- Enable termination position suggestions by clicking the dedicated icon, then double-click on one of the proposed suggestions.
+- Use the input fields in the Termination Settings section.
+- Move the controls shown directly on the selected port (not recommended).
 
 ![physics](imgs/physics.png)
 
 ___
 
-##### **NOTA** <!-- omit in toc -->
+##### **NOTE** <!-- omit in toc -->
 
-Ricordate di salvare eventuali aggiornamenti alle impostazioni delle porte tramite l'apposito pulsante *SAVE*, altrimenti non verranno considerati.
+Remember to save any updates to the port settings using the *SAVE* button, otherwise changes will not be applied.
 ___
 
-Nell'immagine vediamo anche un menu centrale, dal quale è possibile, da sinistra verso destra:
+The image also shows a central menu, from which you can, from left to right:
 
-- aggiungere le porte scegliendo tra due differenti categorie, porte e lumped, ognuna con vincoli interni leggermente differenti, a seconda della specifica simulazione da eseguire;
-- abilitare i suggerimenti sul posizionamento delle porte;
-- resettare il focus della camera nel canvas;
-- mostrare informazioni sul posizionamento delle porte;
-- esportare i parametri della simulazione impostati (porte, lumped e frequenze);
-- importare le porte da file;
-- importare i lumped elements da file;
-- imporatre le frequenze da file.
+- add ports, choosing between two different categories (ports and lumped), each with slightly different internal constraints depending on the specific simulation;
+- enable port position suggestions;
+- reset the camera focus in the canvas;
+- show information about port positions;
+- export the set simulation parameters (ports, lumped, and frequencies);
+- import ports from a file;
+- import lumped elements from a file;
+- import frequencies from a file.
 
-##### **Frequenze**
+##### **Frequencies**
 
-Le frequenze altro non sono che la rappresentazione matematica delle correnti o differenze di potenziale da applicare in input al modello.</br>
-E' possibile definirle tramite la sezione frequencies come un range di valori spaziati logaritmicamente o linearmente, oppure importandole da file.
+Frequencies are simply the mathematical representation of the currents or potential differences to be applied as input to the model.</br>
+They can be defined in the frequencies section as a range of values spaced logarithmically or linearly, or imported from a file.
 
 ![signal_details](imgs/freq_details.png)
 
 #### **Simulator**
 
-Una volta impostate porte e frequenze, possiamo passare alla sezione *Simulator*, nella quale andremo ad eseguire l'operazione di meshing, ovvero una scomposizione del modello in elementi semplici (parallelepipedi nel nostro caso) più piccoli.
-I calcoli verranno poi eseguiti in parallelo sui singoli elementi e il risultato finale della simulazione sarà dato da una composizione di tutti i risultati parziali.</br>
-L'applicazione prevede due tipologie di *Mesher*:
+Once ports and frequencies are set, you can move to the *Simulator* section, where you perform the meshing operation, i.e., breaking down the model into simple elements (parts).</br>
+Calculations will then be performed in parallel on the individual elements, and the final simulation result will be a combination of all partial results.</br>
+The application provides two types of *Mesher*:
 
-- uno che restituisce una scomposizione del modello in elementi semplici tutti della stessa dimensione (*Mesher 1*);
-- uno che restituisce una scomposizione del modello in elementi semplici di dimensioni diverse (*Mesher 2*).
+- one that returns a decomposition of the model into simple elements all of the same size (*Mesher 1*);
+- one that returns a decomposition into elements of different sizes (*Mesher 2*).
 
-Questo perchè sono disponibili due tipi di solver:
+This is because two types of solvers are available:
 
 - Solver *PEEC-FFT*
-- Solver *PEEC-Denso*
+- Solver *PEEC-Dense*
 
-per i quali è necessario partire da due input differenrti. </br>
-Il solver *PEEC-FFT* ha bisogno in input di una mesh formata da elementi della stessa dimensione, mentre il solver *PEEC-Denso* necessita in input di una mesh formata da elementi di dimensioni diverse.
-A questo punto, è doveroso fare una precisazione. L'utilizzo dei due mesher dipende molto da come è stato costruito, in CADmIA, il modello importato nella sezione *Modeler*. Se il modello è stato realizzato semplicemente attraverso la definizione di una serie di bricks (cubi), allora è possibile generare la mesh sfruttando sia *Mesher 1* che *Mesher 2*. Altrimenti, se il modello è stato costruito a partire da un STL o effettuando operazioni booleane, l'unico mesher utilizzabile è il *Mesher 1*.
-Dato che l'utente, dopo la generazione della mesh, può decidere di lanciare la simulazione o di cambiare la mesh, i due mesher prevedono dei parametri di configurazione in input che permettono di aumentare o diminuire il numero di elementi finiti che compongono la mesh.
-Per il *Mesher 1* è possibile, tramite gli appositi pulsanti, incrementare o decrementare le dimensioni dei singoli elementi sui tre assi, x, y e z.
-Per il *Mesher 2* è possibile settare il paramentro Lambda Factor, aumentandolo verrà generata una mesh con un numero di elementi finiti maggiore, diminuendolo verrà generata una mesh con un numero di elementi finiti minore.
-Una volta generata la mesh, il solver da lanciare, verrà selezionato automaticamente in base alla tipologia di mesher selezionata.
-Di seguito vengono mostrate due immagini che mostrano rispettivamente:
+which require two different inputs.</br>
+The *PEEC-FFT* solver requires a mesh made up of elements of the same size, while the *PEEC-Dense* solver requires a mesh of elements of different sizes.</br>
+At this point, it is important to clarify: the use of the two meshers depends greatly on how the model was built in CADmIA and imported in the *Modeler* section. If the model was created with regular geometry, *Mesher 1* is preferable; otherwise, *Mesher 2* may be more suitable.</br>
+Since the user, after mesh generation, can choose to run the simulation or change the mesh, both meshers have configuration parameters that allow adjustment of the element sizes.</br>
+For *Mesher 1*, you can use the dedicated buttons to increase or decrease the size of the individual elements along the three axes: x, y, and z.
+For *Mesher 2*, you can set the Lambda Factor parameter; increasing it will generate a mesh with more finite elements, decreasing it will generate a mesh with fewer elements.</br>
+Once the mesh is generated, the solver to run will be selected automatically based on the type of mesher chosen.
+Below are two images showing:
 
-- la mesh generata grazie al *Mesher 1*;
-- la mesh generata grazie al *Mesher 2*.
+- the mesh generated by *Mesher 1*;
+- the mesh generated by *Mesher 2*.
 
 ![meshing](imgs/mesh_sim1.png)
 ![meshing](imgs/mesh_sim2.png)
 
-La procedura si conclude poi, in ogni caso, con l'avvio della simulazione tramite il pulsante *Start Simulation*.
+The procedure then concludes, in any case, by starting the simulation using the *Start Simulation* button.
 
 #### **Results**
 
-Una volta avviata, la simulazione lavorerà in background, per cui nell'attesa potremo anche fare altro.</br>
-Una volta terminata, potremo andare nella sezione *Results* del progetto relativo, per analizzarne i risultati, sottoforma di grafici sulle varie proprietà oggetto di interesse.</br>
-Nell'immagine possiamo vedere una schermata d'esempio di possibili risultati.
+Once started, the simulation will run in the background, so you can do other things while you wait.</br>
+Once finished, you can go to the *Results* section of the relevant project to analyze the results, displayed as graphs of the various properties of interest.</br>
+The image shows an example screen of possible results.
 
 ![results](imgs/results.png)
 
-Tramite i pulsanti posti nella fascia al di sopra dei grafici è possibile regolare alcune impostazioni di visualizzazione, come la vista su una colonna (grafici più grandi) o su due (più compatta), inoltre è possibile selezionare i gruppi di grafici da visualizzare (All Graph, Z, Y e S) e le porte da osservare.
+Using the buttons above the graphs, you can adjust some display settings, such as viewing in a single column (larger graphs) or two columns (more compact), and others.
 
-### **Storage utente**
+### **User Storage**
 
-Per il mantenimento, il recupero e l'organizzazione dei progetti creati dall'utente, viene messo a disposizione un sistema di cloud storage, mediante il quale è possibile:
+For the storage, retrieval, and organization of projects created by the user, a cloud storage system is provided, through which you can:
 
-- organizzare i progetti in cartelle;
-- creare, cancellare, modificare e spostare progetti e cartelle;
-- condividere progetti e cartelle con gli altri utenti.
+- organize projects into folders;
+- create, delete, modify, and move projects and folders;
+- share projects and folders with other users.
 
-Tali funzionalita vengono rese disponibili all’utente attraverso un menù attivabile grazie al click del tasto destro del mouse sul progetto o la cartella a cui si intendono applicare. Per la funzione di spostameto di progetti e cartelle è prevista un’ulteriore modalita di Drag and Drop.
+These features are made available to the user through a menu activated by right-clicking on the project or folder you want to act on. For sharing functionality, a dedicated option is provided.
 
 ![drive](imgs/drive.png)
 
-#### **Condivisione progetti e cartelle**
+#### **Project and Folder Sharing**
 
-Come già detto, attraverso questo sistema di cloud storage, è possibile anche condividere progetti con gli altri utenti.
-Come si vede dalla figura seguente, una volta selezionata l'opzione *Share*, potremo selezionare l'utente con cui condivere, ricercandolo per email.</br>
-Questa funzionalità è disponibile unicamente per gli utenti Premium.
+As mentioned, with this cloud storage system, you can also share projects with other users.
+As shown in the figure below, once the *Share* option is selected, you can choose the user to share with by searching for their email.</br>
+This feature is only available to Premium users.
 
 ![drive_condivisione](imgs/Condivisione.png)

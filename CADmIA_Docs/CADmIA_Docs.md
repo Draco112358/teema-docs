@@ -1,84 +1,84 @@
 # CADmIA Docs <!-- omit in toc -->
 
-## Versione 0.0.1 <!-- omit in toc -->
+## Version 0.0.1 <!-- omit in toc -->
 
-- [**Scopo**](#scopo)
-- [**Funzionalità**](#funzionalità)
-  - [**Muoversi nella scena**](#muoversi-nella-scena)
-  - [**Modelli base**](#modelli-base)
-  - [**Composizione con operazioni binarie**](#composizione-con-operazioni-binarie)
+- [**Purpose**](#purpose)
+- [**Features**](#features)
+  - [**Navigating the Scene**](#navigating-the-scene)
+  - [**Basic Models**](#basic-models)
+  - [**Composition with Binary Operations**](#composition-with-binary-operations)
     - [**UNION**](#union)
     - [**SUBTRACTION**](#subtraction)
     - [**INTERSECTION**](#intersection)
-  - [**Trasformazioni**](#trasformazioni)
-  - [**Clonazione di oggetti**](#clonazione-di-oggetti)
-  - [**Materiali**](#materiali)
-  - [**Costruzione del modello: Standard vs Ris**](#costruzione-del-modello-standard-vs-ris)
+  - [**Transformations**](#transformations)
+  - [**Object Cloning**](#object-cloning)
+  - [**Materials**](#materials)
+  - [**Model Construction: Standard vs Ris**](#model-construction-standard-vs-ris)
     - [**Standard**](#standard)
     - [**Ris**](#ris)
   - [**Import/Export**](#importexport)
 
-## **Scopo**
+## **Purpose**
 
-CADmIA è un'applicazione per la creazione di modelli 3D.
-Nata inizialmente per la modellazione in ambito elettrico/elettronico, ha acquisito poi una sua indipendenza, slegandosi da specifici domini applicativi.
-Tramite una serie di componenti base (in futuro estendibili) componibili, si può arrivare a creare modelli di elevata complessità.
+CADmIA is an application for creating 3D models.
+Initially born for modeling in the electrical/electronic field, it later became independent, detaching itself from specific application domains.
+Through a series of basic (and in the future, extendable) components, which can be combined, you can create highly complex models.
 
-<!-- ## **Panoramica dell'architettura**
+<!-- ## **Architecture Overview**
 
-Vediamo innanzitutto uno schema di massima dell'architettura di CADmIA, con esempi di relazioni tra i vari strati per alcune funzionalità specifiche.
+Let's first take a high-level look at the architecture of CADmIA, with examples of relationships between the various layers for some specific features.
 
-![cadmia_architettura](imgs/cadmia_arch.png)
+![cadmia_architecture](imgs/cadmia_arch.png)
 
-L'applicazione è basata su due tecnologie prinicipali lato client:
-- *ReactJS*, per lo sviluppo dell'interfaccia;
-- *ThreeJS*, per la rappresentazione dei modelli 3D.
+The application is based on two main client-side technologies:
+- *ReactJS*, for developing the interface;
+- *ThreeJS*, for rendering 3D models.
 
-Per quanto riguarda la parte server, invece, ne sfrutta essenzialmente tre:
-- *Auth0*, per le procedure di autenticazione e gestione degli utenti;
-- *Fauna*, per la gestione dei dati dell'app, con le relative politiche di accesso ad essi da parte degli utenti;
-- *AWS*, utilizzato come storage per i modelli salvati, che possono arrivare a dimensioni considerevoli, non gestibili direttamente tramite Fauna.</br> -->
+As for the server side, it essentially relies on three services:
+- *Auth0*, for authentication and user management procedures;
+- *Fauna*, for managing app data, with the relevant user access policies;
+- *AWS*, used as storage for saved models, which can reach considerable sizes not manageable directly via Fauna.</br> -->
 
-## **Funzionalità**
+## **Features**
 
-La parte principale dell'interfaccia è rappresentata dal Canvas, lo spazio nel quale verranno creati i modelli.
+The main part of the interface is the Canvas, the space where models will be created.
 
-### **Muoversi nella scena**
+### **Navigating the Scene**
 
-Una delle sue principali funzionalità è la possibilità di ruotare la scena, cambiando l'angolo di visuale. Per far questo basta cliccare in un punto vuoto della scena e, tenendo premuto, muoversi ruotando la visuale.</br>
-Un'altra funzione molto utile è quella di zoom, attivabile tramite le analoghe procedure di touchpad e mouse.</br>
-Una cosa da tenere presente è che il punto di vista è centrato di default sull'origine degli assi di riferimento, per cui sia la rotazione della scena che lo zoom saranno realizzati rispetto a quel punto specifico. In alcuni casi però vorremo poter vedere nel dettaglio uno specifico oggetto: in questo caso prima di effettuare zoom o rotazioni di scena, possiamo centrare il punto di vista sull'oggetto specifico, con un doppio click su di esso. Sarà sempre possibile reimpostare il punto di vista di default sull'origine degli assi, tramite il menu *View->Reset Orbit To Origin*.
+One of its main features is the ability to rotate the scene, changing the viewing angle. To do this, simply click on an empty spot in the scene and, while holding down, move the mouse or finger in the desired direction.
+Another very useful function is zoom, which can be activated via the usual touchpad and mouse gestures.</br>
+One thing to keep in mind is that the point of view is by default centered on the origin of the reference axes, so both scene rotation and zoom will be performed with respect to that point.
 
-### **Modelli base**
+### **Basic Models**
 
-Allo stato attuale, sono disponibili 5 modelli di base (vedi immagine seguente), ognuno con caratteristiche specifiche regolabili dalla SideBar:
+Currently, 5 basic models are available (see the image below), each with specific characteristics adjustable from the SideBar:
 
-- *cubo*, con altezza, larghezza, profondità.
-- *sfera*, caratterizzata dal suo raggio.
-- *cilindro*, con altezza e raggi di base regolabili singolarmente. In tal modo è molto semplice ottenere ad esempio dei tronchi di cono.
-- *toro*, definito da un raggio del toro che va dal centro dell'oggetto fino al centro del tubo, un raggio del tubo, che determina lo spessore della ciambella.
-- *cono*, con altezza e raggio di base.
+- *cube*, with height, width, and depth.
+- *sphere*, defined by its radius.
+- *cylinder*, with adjustable height and base radii. This makes it very easy, for example, to create truncated cones.
+- *torus*, defined by a torus radius (from the center of the object to the center of the tube) and a tube radius (which determines the thickness of the donut).
+- *cone*, with height and base radius.
 
-![modelli_base](imgs/base_components.png)
+![basic_models](imgs/base_components.png)
 
-È possibile inserirli nella scena sia tramite l'apposita voce di menu nell navbar che tramite una comoda toolbar (evidenziata in giallo nell'immagine).
+You can insert them into the scene either via the appropriate menu item in the navbar or through a handy toolbar (highlighted in yellow in the image).
 
-Ognuno dei modelli ha poi degli attributi riguardanti il numero di segmenti da utilizzare per rappresentare le varie superfici che lo compongono. Questi non riguardano le proprietà geometriche degli oggetti, ma la loro rappresentazione in ThreeJS, che li vede come Mesh, quindi composizioni di unità più piccole. Quanto più grande è il numero di segmenti impostato per le superfici di un oggetto, tanto maggiore sarà il suo livello di dettaglio, tanto più onerosa sarà la sua rappresentazione.
-Sta quindi all'utente scegliere il giusto compromesso tra prestazioni e precisione richiesta.
+Each model also has attributes related to the number of segments to use for representing the various surfaces that compose it. These do not affect the geometric properties of the object but only its visual rendering.
+It is up to the user to choose the right compromise between performance and required precision.
 ___
 
-#### *Esempio* <!-- omit in toc -->
+#### *Example* <!-- omit in toc -->
 
-il cilindro in ThreeJS è in realtà un prisma di cui è possibile regolare il numero di segmenti radiali. In sostanza, il profilo curvo è approssimato con delle spezzate, pertanto più è alto il numero di segmenti radiali, migliore sarà l'approssimazione del prisma verso un cilindro.
+The cylinder in ThreeJS is actually a prism whose number of radial segments can be adjusted. Essentially, the curved profile is approximated with polylines, so the higher the number of segments, the more the object will resemble a real cylinder, but at the cost of performance.
 ___
 
-Dall'esempio si intuisce anche come, tramite questi attributi aggiuntivi, sia possibile ottenere altre forme geometriche: se infatti volessimo un prisma a base pentagonale, ci basterebbe prendere il cilindro come elemento base ed impostargli un numero di segmenti radiali pari a 5.
-Allo stesso modo se volessimo una piramide a base quadrata, potremmo partire da un cono ed impostare il numero di segmenti radiali a 4.
+From the example, it is also clear how, through these additional attributes, it is possible to obtain other geometric shapes: if we wanted a pentagonal prism, we would simply take the cylinder and set the number of radial segments to 5.
+Similarly, if we wanted a square-based pyramid, we could start from a cone and set the number of radial segments to 4.
 
-### **Composizione con operazioni binarie**
+### **Composition with Binary Operations**
 
-Per la creazione di modelli complessi, i componenti base con i loro attributi regolabili da soli non sono sufficienti. Abbiamo allora aggiunto la possibilità di effettuare delle operazioni binarie tra essi, in modo da comporli assieme in oggetti di complessità arbitraria.
-Nei seguenti video possiamo vedere semplici esempi di unione, intersezione e differenza.
+For creating complex models, the basic components with their adjustable attributes alone are not enough. Therefore, we have added the ability to perform binary operations between objects.
+The following videos show simple examples of union, intersection, and difference.
 
 #### **UNION**
 
@@ -92,89 +92,89 @@ Nei seguenti video possiamo vedere semplici esempi di unione, intersezione e dif
 
 [![Watch the video](imgs/intersection.png)](https://drive.google.com/file/d/1cJXbJoTGMf-F0H4JcrHaehVi5wS7LOKk/view?usp=drive_link)
 
-Utilizzando la specifica toolbar posta sulla sinistra è possibile selezionare il tipo di operazione desiderata per entrare nella modalità "Binary Operation": ve ne accorgerete perché gli oggetti diverranno semitrasparenti. A questo punto potremo selezionare i singoli oggetti sui quali effettuare l'operazione (che risulteranno evidenziati rispetto agli altri) e infine avviarla dalla toolbar. </br>
-Qualora avessimo selezionato un oggetto per sbaglio, ci basterà cliccare nuovamente su di esso per deselezionarlo.</br>
-In qualsiasi momento, sempre dalla toolbar, è possibile annullare l'intera procedura, uscendo dalla modalità "Binary Operation".
+Using the specific toolbar on the left, you can select the type of operation you want to enter "Binary Operation" mode: you will notice this because the objects in the scene will be highlighted.
+If you selected an object by mistake, just click on it again to deselect it.</br>
+At any time, again from the toolbar, you can cancel the entire procedure, exiting "Binary Operation" mode.
 
-È inoltre prevista la possibilità di effettuare una stessa operazione in cascata tra più di due oggetti la volta. Basterà selezionarli tutti prima di avviare l'operazione.
+It is also possible to perform the same operation in cascade between more than two objects at a time. Just select them all before starting the operation.
 
-Ricordate, infine, che mentre l'unione e l'intersezione sono commutative, per cui non ha importanza l'ordine con cui selezionate gli oggetti, la differenza non lo è, pertanto prestate attenzione al giusto ordine quando selezionerete gli oggetti su cui eseguirla.
+Remember that while union and intersection are commutative (order does not matter), subtraction is not, so pay attention to the order in which you select objects.
 
-### **Trasformazioni**
+### **Transformations**
 
-Ogni volta che selezioniamo un oggetto, su di esso si attiveranno dei controlli per effettuare 3 tipi di trasformazione:
+Whenever we select an object, controls are activated to perform 3 types of transformation:
 
-- *traslazione*, per muovere l'oggetto all'interno della scena;
-- *rotazione*, per ruotare l'oggetto attorno ai suoi assi;
-- *scalamento*, per ridimensionare l'oggetto, sempre lungo i suoi assi.
+- *translation*, to move the object within the scene;
+- *rotation*, to rotate the object around its axes;
+- *scaling*, to resize the object along its axes.
 
-Nella figura possiamo vedere come si presentano i controlli nei tre casi.
+The figure shows how the controls appear in the three cases.
 
-![movimenti](imgs/movements.png)
-Per selezionare la specifica trasformazione è necessario attivare l'apposita toolbar tramite la voce di menù *View->Trasformations toolbar*.
+![movements](imgs/movements.png)
+To select the specific transformation, you need to activate the appropriate toolbar via the *View->Transformations toolbar* menu item.
 
-Per un risultato più accurato, ad esempio spostamenti di precisione, è possibile impostare direttamente i valori numerici relativi alle tre trasformazioni tramite la i campi di input presenti nella modale attivabile grazie al pulsante *Change Transformation Params*, come si può vedere nella figura seguente.
-![spostamenti_accurati](imgs/accurate_movements.png)
+For a more accurate result, such as precise movements, you can directly set the numerical values for the three transformations via the input fields in the SideBar.
+![precise_movements](imgs/accurate_movements.png)
 
-### **Clonazione di oggetti**
+### **Object Cloning**
 
-Un'operazione comune, utile per risparmiare tempo, è quella di clonazione, che replica un oggetto esistente con tutte le sue proprietà.</br>
-Per effettuare questa operazione basta selezionare l'oggetto e poi utilizzare il comando apposito che si può vedere nella figura seguente, evidenziato in giallo, dove l'abbiamo usato per clonare un cubo.</br>
-Comunque, seppur identico all'originale, il nuovo oggetto creato è completamente indipendente da esso.
+A common operation, useful for saving time, is cloning, which replicates an existing object with all its properties.</br>
+To perform this operation, simply select the object and then use the appropriate command, highlighted in yellow in the figure below, where we used it to clone a cylinder.
+Even though it is identical to the original, the newly created object is completely independent from it.
 
 ![clone](imgs/clone.png)
 
-### **Materiali**
+### **Materials**
 
-Oltre le caratteristiche geometriche, è possibile assegnare agli oggetti anche dei materiali.</br>
-Nella figura seguente vediamo la selezione del materiale tramite la SideBar. Per poter utilizzare i materiali bisogna essere loggati.
+In addition to geometric characteristics, you can also assign materials to objects.</br>
+The figure below shows material selection via the SideBar. To use materials, you must be logged in.
 
-![selezione_materiale](imgs/materials.png)
+![select_material](imgs/materials.png)
 
-L'assegnazione di un materiale, oltre ad un riscontro immediato sull'oggetto, che assumerà il colore definito da quello, comporta per l'oggetto anche l'assunzione di tutte le proprietà fisiche del materiale stesso. Nella figura sottostante si possono vedere alcune proprietà specifiche che i materiali portano con sé, nel riquadro evidenziato in giallo.
+Assigning a material, in addition to giving immediate visual feedback (the object will take on the material's defined color), also gives the object all the physical properties of the material.
 
-![materiale_dettagli](imgs/material_details.png)
+![material_details](imgs/material_details.png)
 
-Al momento le proprietà fisiche di interesse sono quelle di natura elettrica/elettronica, ma in futuro potranno esserne aggiunte altre, ad esempio proprietà meccaniche.
+Currently, the relevant physical properties are electrical/electronic, but more may be added in the future, such as mechanical properties.
 
-### **Costruzione del modello: Standard vs Ris**
+### **Model Construction: Standard vs Ris**
 
-Un modello può essere definito tramite due strategie operative:
+A model can be defined using two operational strategies:
 
-- Standar
+- Standard
 - Ris
 
 #### **Standard**
 
-Questa prevede la costruzione del modello tramite l'import di file STL, oppure sfruttando le forme di base messe a disposizione, applicando su di esse operazioni booleane.
-Nel seguente video verrà mostrato un esempio di costruzione del modello secondo la strategia Standard.
+This involves building the model by importing STL files or using the available basic shapes, applying boolean operations to them.
+The following video shows an example of model construction using the Standard strategy.
 
 [![Watch the video](imgs/preview_costruzione_standard.png)](https://drive.google.com/file/d/1G6FwOC39eJICPSjqcWjQ-OQXU5YCBnVT/view?usp=drive_link)
 
 #### **Ris**
 
-In questo caso la costruzione del modello avviene attraverso la definizione di una serie di bricks (cubi).
-Nel seguente video verrà mostrato un esempio di costruzione del modello secondo la strategia Ris.
+In this case, the model is built by defining a series of bricks (cubes).
+The following video shows an example of model construction using the Ris strategy.
 
 [![Watch the video](imgs/preview_costruzione_standard.png)](https://drive.google.com/file/d/15c3hguSWPQ9-VdZRlTWC7nePjricLIPi/view?usp=drive_link)
 
-È fondamentale distinguere tra le diverse strategie, poiché la scelta adottata influirà sulla simulazione futura del modello. In particolare, durante la fase preliminare della simulazione, che prevede la suddivisione del modello in una serie di elementi semplici (nel nostro caso, parallelepipedi), se il modello è stato generato utilizzando la strategia *Standar*, verranno restituiti elementi di dimensioni uniformi; al contrario, adottando la strategia *Ris*, si otterranno elementi di dimensioni variabili.
+It is essential to distinguish between the different strategies, as the chosen one will affect the future simulation of the model. In particular, during the preliminary simulation phase, which involves checking the geometry for possible errors, the procedure will differ based on the adopted strategy.
 
 ### **Import/Export**
 
-Per quanto riguarda le funzionalità di import/export, abbiamo tre opzioni disponibili al momento. Nella figura possiamo vedere il menu relativo.
+As for import/export features, we currently have three available options. The figure below shows the related menu.
 
 ![import_export](imgs/import_export_menu.png)
 
-In particolare abbiamo:
+In particular, we have:
 
 - Export
-  - *Save As*. Salva il modello, costruito attraverso la strategia Standard, sul server e richiede il login.</br> Selezionando l'apposita voce di menù ci verrà chiesto di inserire un nome per il modello da salvare. Nel modello saranno compresi tutti gli oggetti presenti nella scena.
-  - *Save With Ris Geometry Data*. Salva il modello, costruito attraverso la strategia Ris, sul server e richiede il login.</br> Selezionando l'apposita voce di menù ci verrà chiesto di inserire un nome per il modello da salvare. Nel modello saranno compresi tutti gli oggetti presenti nella scena.
-  - *Export Project*. Tramite essa andremo ad esportare in locale, in formato JSON, tutti gli oggetti presenti nella scena.
-  - *Export STL Format*. In questo caso esportiamo in locale gli oggetti presenti nella scena, ma in formato STL, uno standard molto diffuso.</br> Una differenza importante rispetto all'export in JSON è che, in questo caso, per vincoli di formato, tutti gli oggetti della scena verranno esportati come fossero un tutt'uno. Se ad esempio nella scena avessimo due oggetti distinti, essi verrebbero esportati come un'unica geometria, per cui un futuro import non ci permetterebbe di riavere gli oggetti distinti, ma solo la loro unione.</br> Perderemo, inoltre, le informazioni sui materiali assegnati ai vari oggetti.
+  - *Save As*. Saves the model, built using the Standard strategy, on the server and requires login.</br> When selecting this menu item, you will be asked to enter a name for the model, and it will be saved on the server.
+  - *Save With Ris Geometry Data*. Saves the model, built using the Ris strategy, on the server and requires login.</br> When selecting this menu item, you will be asked to enter a name for the model, and it will be saved on the server.
+  - *Export Project*. Exports all objects present in the scene locally in JSON format.
+  - *Export STL Format*. Exports the objects present in the scene locally in STL format, a widely used standard.</br> An important difference compared to JSON export is that STL only saves the geometric properties, not the materials or other attributes.
 - Import
-  - *Load*. Consente di riprendere un modello salvato sul server e richiede il login.</br> Tramite questa voce di menu ci si aprirà una finestra con una lista dei modelli precedentemente salvati da noi sul database, per poterne selezionare uno da caricare nella scena.
-  - *Import Project*. Questa opzione consente di caricare nella scena un modello Standar salvato precedentemente in formato JSON.
-  - *Import STL File*. In questo caso andiamo a caricare il modello da un file STL locale.
-  - *Import Ris Geometry*. In questo caso andiamo a caricare il modello Ris salvato precedentemente in formato JSON.
+  - *Load*. Allows you to resume a model saved on the server and requires login.</br> This menu item opens a window with a list of models previously saved by the user on the server.
+  - *Import Project*. Allows you to load into the scene a Standard model previously saved in JSON format.
+  - *Import STL File*. Loads the model from a local STL file.
+  - *Import Ris Geometry*. Loads a Ris model previously saved in JSON format.
